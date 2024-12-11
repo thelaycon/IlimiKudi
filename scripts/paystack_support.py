@@ -25,7 +25,7 @@ with open(OUTPUT_FILE, mode="w", newline="", encoding="utf-8") as csv_file:
 
     # Navigate to main support page
     page.get(PAYSTACK_SUPPORT_URL)
-    page.wait.load_complete()
+    page.wait.doc_loaded()
 
     time.sleep(10)
 
@@ -35,7 +35,7 @@ with open(OUTPUT_FILE, mode="w", newline="", encoding="utf-8") as csv_file:
 
     for categories_link in categories_links:
         page.get(categories_link)
-        page.wait.load_complete()
+        page.wait.doc_loaded()
 
         time.sleep(5)
 
@@ -45,7 +45,7 @@ with open(OUTPUT_FILE, mode="w", newline="", encoding="utf-8") as csv_file:
 
         for sub_categories_link in sub_categories_links:
             page.get(sub_categories_link)
-            page.wait.load_complete()
+            page.wait.doc_loaded()
 
             time.sleep(5)
 
@@ -56,7 +56,7 @@ with open(OUTPUT_FILE, mode="w", newline="", encoding="utf-8") as csv_file:
             for article_link in articles_links:
                 try:
                     page.get(article_link)
-                    page.wait.load_complete()
+                    page.wait.doc_loaded()
                     
                     time.sleep(5)
 

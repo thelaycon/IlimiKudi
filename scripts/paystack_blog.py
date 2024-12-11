@@ -30,7 +30,7 @@ with open(OUTPUT_FILE, mode="w", newline="", encoding="utf-8") as csv_file:
     for n in range(1, PAGES + 1):
         print(f"Scraping page {n}...")
         page.get(PAYSTACK_BLOG_URL.format(n=n))
-        page.wait.load_complete()
+        page.wait.doc_loaded()
 
         # Allow page to load
         time.sleep(10)
@@ -43,7 +43,7 @@ with open(OUTPUT_FILE, mode="w", newline="", encoding="utf-8") as csv_file:
             try:
                 print(f"Scraping article: {link}")
                 page.get(link)
-                page.wait.load_complete()
+                page.wait.doc_loaded()
                 
                 # Allow article to load
                 time.sleep(5)
