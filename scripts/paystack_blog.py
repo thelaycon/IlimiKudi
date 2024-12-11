@@ -1,3 +1,4 @@
+import os
 import time
 import csv
 from DrissionPage import ChromiumPage
@@ -7,6 +8,9 @@ PAYSTACK_BLOG_URL = "https://paystack.com/blog/page/{n}?q=/"
 SITE_NAME = "paystack"
 TYPE = "blog"
 OUTPUT_FILE = "datasets/paystack_blog_posts.csv"
+
+# Ensure the directory exists
+os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
 # Initialize ChromiumPage
 page = ChromiumPage()
@@ -26,6 +30,7 @@ with open(OUTPUT_FILE, mode="w", newline="", encoding="utf-8") as csv_file:
     for n in range(1, PAGES + 1):
         print(f"Scraping page {n}...")
         page.get(PAYSTACK_BLOG_URL.format(n=n))
+        page.wait.load_complete()
 
         # Allow page to load
         time.sleep(10)
@@ -38,6 +43,7 @@ with open(OUTPUT_FILE, mode="w", newline="", encoding="utf-8") as csv_file:
             try:
                 print(f"Scraping article: {link}")
                 page.get(link)
+                page.wait.load_complete()
                 
                 # Allow article to load
                 time.sleep(5)
