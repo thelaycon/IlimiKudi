@@ -60,7 +60,7 @@ with open(OUTPUT_FILE, mode="w", newline="", encoding="utf-8") as csv_file:
 
             article = page.eles("@class=css-1e3i1a4")
             if article and len(article) > 1:
-                text = article[1].text.replace('"', "'")
+                text = article[1].text.replace('"', "'").replace('“', "'").replace('”', "'")
 
                 # Write to CSV
                 writer.writerow({"site": SITE_NAME, "text": text, "type": TYPE})

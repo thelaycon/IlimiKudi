@@ -51,7 +51,7 @@ with open(OUTPUT_FILE, mode="w", newline="", encoding="utf-8") as csv_file:
                 # Extract article content
                 article = page.ele('xpath:/html/body/article')
                 if article:
-                    text = article.text.replace('"', "'")
+                    text = article.text.replace('"', "'").replace('“', "'").replace('”', "'")
                     
                     # Write to CSV
                     writer.writerow({"site": SITE_NAME, "text": text, "type": TYPE})
