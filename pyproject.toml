@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ilimikudi"
-version = "0.1.0"
-description = "A tool for accessing Fintech and Banking datasets for AI-powered customer care applications"
+version = "0.3.0"
+description = "A package for Gen AI customer care and data processing"
 authors = ["thelaycon <tobitobitobiwhy@gmail.com>"]
 readme = "README.md"
 
@@ -10,9 +10,15 @@ python = "^3.10"
 playwright = "^1.49.1"
 drissionpage = "^4.1.0.13"
 mamaduck = "^1.0.1"
-pandas = "^2.2.3"
+pandas = "^2.2.2"
 tiktoken = "^0.8.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.package]
+include = [
+    { path = "ilimikudi/datasets", format = "file" },
+    { path = "ilimikudi/databases", format = "file" }
+]
