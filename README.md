@@ -21,7 +21,7 @@ pip install pandas duckdb
 Load datasets using the following classes:
 
 ```python
-from ilimikudi import GTBSupportPosts
+from ilimikudi.data import GTBSupportPosts
 
 # Access GTB Support Posts data
 gtb_posts = GTBSupportPosts()
@@ -42,7 +42,7 @@ Available classes for CSV files:
 Query the integrated database:
 
 ```python
-from ilimikudi import MergedDB
+from ilimikudi.data import MergedDB
 
 # Query the integrated database
 db = MergedDB()
