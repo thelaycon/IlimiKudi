@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.10"
 playwright = "^1.49.1"
 drissionpage = "^4.1.0.13"
+mamaduck = "^1.0.1"
+pandas = "^2.2.3"
+tiktoken = "^0.8.0"
 
 
 [build-system]
