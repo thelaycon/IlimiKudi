@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ilimikudi"
-version = "0.3.0"
-description = "Datasets for Gen AI customer care and data processing"
+version = "0.3.1"
+description = "Datasets for Gen AI customer care and data processing for Nigerian Banks and Fintech"
 authors = ["thelaycon <tobitobitobiwhy@gmail.com>"]
 readme = "README.md"
 
