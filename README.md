@@ -11,7 +11,7 @@
 Install the required dependencies via `pip`:
 
 ```bash
-pip install pandas duckdb
+pip install ilimikudi
 ```
 
 ## Usage
